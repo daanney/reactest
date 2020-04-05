@@ -1,10 +1,14 @@
 import React from 'react';
+
 import './App.css';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+
 import { TopNavigation } from './components/nav/topNavigation';
 import { SideNavigation } from './components/nav/sideNavigation';
 import { ListContacts } from './components/contacts/listContacts';
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
-import CreateComponent from './components/contacts/createContact';
+
+import CreateContact from './components/contacts/createContact';
+import DetailContact from './components/contacts/detailContact';
 
 export default class App extends React.Component {
   state = {
@@ -39,8 +43,9 @@ export default class App extends React.Component {
                 <ListContacts contacts={this.state.contacts} />
               </Route>
               <Route path='/contact/create'>
-                <CreateComponent onSaveContact={this.saveContact} />
+                <CreateContact onSaveContact={this.saveContact} />
               </Route>
+              <Route path='/contact/:id' component={DetailContact} />
             </Switch>
           </main>
         </div>

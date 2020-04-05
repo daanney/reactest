@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 export const ListContacts =({contacts})=> {
     return (
@@ -8,9 +9,10 @@ export const ListContacts =({contacts})=> {
                 <thead className="thead-dark">
                     <tr>
                         <th scope='col'>#</th>
-                        <th scope='col'>Nem</th>
+                        <th scope='col'>Name</th>
                         <th scope='col'>Address</th>
                         <th scope='col'>Phone</th>
+                        <th scope='col'>Action</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -19,6 +21,7 @@ export const ListContacts =({contacts})=> {
                         <td>{c.firstName} {c.lastName}</td>
                         <td>{c.address1}<br />{c.address2}</td>
                         <td>{c.phone}</td>
+                        <td><Link to={'/contact/' + c.id}>Details</Link></td>
                     </tr>)}
                 </tbody>
             </table>

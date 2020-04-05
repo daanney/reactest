@@ -1,6 +1,6 @@
 import React from 'react';
 
-export default class CreateComponent extends React.Component {
+export default class CreateContact extends React.Component {
     state = {
         firstName: {label: 'First Name', placeholder: 'John', required: true, valid: true, value: ''},
         lastName: {label: 'Last Name', placeholder: 'Doe', required: true, valid: true, value: ''},

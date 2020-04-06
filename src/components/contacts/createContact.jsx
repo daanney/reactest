@@ -24,7 +24,7 @@ export default class CreateContact extends React.Component {
         let errors = 0
         for(const key in formData) {
             const item = formData[key]
-            if(item.required && item.value.trim() == '') {
+            if(item.required && item.value.trim().equals('')) {
                 errors++;
                 formData[key].valid = false
                 continue
